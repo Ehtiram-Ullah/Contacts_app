@@ -1,4 +1,3 @@
-import 'package:uuid/data.dart';
 import 'package:uuid/uuid.dart';
 
 class Contact {

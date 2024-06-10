@@ -11,7 +11,6 @@ class ContactBook extends ValueNotifier<List<Contact>> {
 
   void add(Contact contact) {
     value.add(contact);
-    // Notifi();
     notifyListeners();
   }
 

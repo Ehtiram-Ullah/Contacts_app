@@ -36,12 +36,12 @@ class ListViewBuilder extends StatelessWidget {
               contacts.delete(contacts.value[index]);
             },
             child: Material(
-              color: Color.fromARGB(255, 233, 224, 224),
+              color: Color.fromARGB(255, 243, 238, 238),
               elevation: 6,
               child: ListTile(
                 leading: Icon(Icons.face),
-                title: Text(contacts.value[index].name),
-                trailing: Text(contacts.value[index].phoneNumber),
+                title: ContactInfo(index, context, true),
+                trailing: ContactInfo(index, context, false),
               ),
             ),
           ),
@@ -50,4 +50,12 @@ class ListViewBuilder extends StatelessWidget {
       itemCount: contacts.length,
     );
   }
+
+  Text ContactInfo(int index, BuildContext context, bool isName) => Text(
+        isName ? contacts.value[index].name : contacts.value[index].phoneNumber,
+        style: TextStyle(
+            fontFamily: "Poppins-Light",
+            fontWeight: FontWeight.bold,
+            fontSize: MediaQuery.sizeOf(context).height / 50),
+      );
 }
