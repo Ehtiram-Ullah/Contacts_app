@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter/services.dart';
 
 class About extends StatelessWidget {
   const About({super.key});
@@ -8,7 +8,7 @@ class About extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("About"),
+          title: const Text("About"),
           centerTitle: true,
         ),
         body: Column(
@@ -60,7 +60,28 @@ class About extends StatelessWidget {
                     SizedBox(
                       height: MediaQuery.sizeOf(context).height / 60,
                     ),
-                    MyInfo(context, "0345-0551501"),
+                    GestureDetector(
+                        onTap: () {
+                          Clipboard.setData(
+                              const ClipboardData(text: "03450551501"));
+                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            content: Text(
+                              "Phone number copied to clipboard",
+                              style: TextStyle(
+                                  fontFamily: "Poppins-Light",
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize:
+                                      MediaQuery.sizeOf(context).height / 50),
+                            ),
+                            duration: Duration(seconds: 2),
+                            backgroundColor:
+                                const Color.fromARGB(255, 243, 238, 238),
+                            // animation: AnimationController(vsync: ) ,
+                            // elevation: 15,
+                          ));
+                        },
+                        child: MyInfo(context, "0345-0551501")),
                   ],
                 ),
               ),

@@ -1,5 +1,6 @@
 import 'package:contacts_app/models/contact_book.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
@@ -36,13 +37,33 @@ class ListViewBuilder extends StatelessWidget {
             onDismissed: (direction) {
               contacts.delete(contacts.value[index]);
             },
-            child: Material(
-              color: const Color.fromARGB(255, 243, 238, 238),
-              elevation: 6,
-              child: ListTile(
-                leading: Icon(Icons.face),
-                title: ContactInfo(index, context, true),
-                trailing: ContactInfo(index, context, false),
+            child: GestureDetector(
+              onTap: () {
+                Clipboard.setData(
+                    ClipboardData(text: contacts.value[index].phoneNumber));
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                  content: Text(
+                    "Phone number copied to clipboard",
+                    style: TextStyle(
+                        fontFamily: "Poppins-Light",
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: MediaQuery.sizeOf(context).height / 50),
+                  ),
+                  duration: Duration(seconds: 2),
+                  backgroundColor: const Color.fromARGB(255, 243, 238, 238),
+                  // animation: AnimationController(vsync: ) ,
+                  // elevation: 15,
+                ));
+              },
+              child: Material(
+                color: const Color.fromARGB(255, 243, 238, 238),
+                elevation: 6,
+                child: ListTile(
+                  leading: Icon(Icons.face),
+                  title: ContactInfo(index, context, true),
+                  trailing: ContactInfo(index, context, false),
+                ),
               ),
             ),
           ),
