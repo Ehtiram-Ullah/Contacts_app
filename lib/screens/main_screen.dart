@@ -28,6 +28,7 @@ class ListViewBuilder extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
       itemBuilder: (context, index) {
+        // print("The id of the Contact is ${contacts.value[index].id}");
         return Padding(
           padding: const EdgeInsets.all(8.0),
           child: Dismissible(
@@ -36,7 +37,7 @@ class ListViewBuilder extends StatelessWidget {
               contacts.delete(contacts.value[index]);
             },
             child: Material(
-              color: Color.fromARGB(255, 243, 238, 238),
+              color: const Color.fromARGB(255, 243, 238, 238),
               elevation: 6,
               child: ListTile(
                 leading: Icon(Icons.face),

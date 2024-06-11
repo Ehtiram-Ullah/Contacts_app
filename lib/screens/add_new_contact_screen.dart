@@ -60,7 +60,7 @@ class _AddNewContactState extends State<AddNewContact> {
                   .add(Contact(name: name.text, phoneNumber: phoneNumber.text));
               Navigator.pop(context);
             },
-            child: Text("ADD"))
+            child: const Text("ADD"))
       ],
     );
   }
@@ -80,13 +80,15 @@ class _AddNewContactState extends State<AddNewContact> {
             Radius.circular(15),
           ),
         ),
-
         hintStyle: const TextStyle(
             color: Color.fromARGB(100, 122, 118, 118),
             fontFamily: "Poppins-Light"),
         alignLabelWithHint: false,
+
         // contentPadding: EdgeInsets.symmetric(horizontal: 20.0),
       ),
+      style: const TextStyle(
+          fontFamily: "Poppins-Light", fontWeight: FontWeight.bold),
       controller: controller,
     );
   }
