@@ -36,6 +36,20 @@ class ListViewBuilder extends StatelessWidget {
             key: ValueKey(contacts),
             onDismissed: (direction) {
               contacts.delete(contacts.value[index]);
+              ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                content: Text(
+                  "Contact successfully deleted",
+                  style: TextStyle(
+                      fontFamily: "Poppins-Light",
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: MediaQuery.sizeOf(context).height / 50),
+                ),
+                duration: Duration(seconds: 2),
+                backgroundColor: const Color.fromARGB(255, 243, 238, 238),
+                // animation: AnimationController(vsync: ) ,
+                // elevation: 15,
+              ));
             },
             child: GestureDetector(
               onTap: () {
