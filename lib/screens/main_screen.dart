@@ -30,12 +30,15 @@ class ListViewBuilder extends StatelessWidget {
     return ListView.builder(
       itemBuilder: (context, index) {
         // print("The id of the Contact is ${contacts.value[index].id}");
+        final contact = contacts.value[index];
         return Padding(
           padding: const EdgeInsets.all(8.0),
           child: Dismissible(
-            key: ValueKey(contacts),
+            // Unique key vlaue for every item
+            key: ValueKey(contact.id),
             onDismissed: (direction) {
-              contacts.delete(contacts.value[index]);
+              print("The index is $index");
+              contacts.delete(contact);
               ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                 content: Text(
                   "Contact successfully deleted",
@@ -53,8 +56,7 @@ class ListViewBuilder extends StatelessWidget {
             },
             child: GestureDetector(
               onTap: () {
-                Clipboard.setData(
-                    ClipboardData(text: contacts.value[index].phoneNumber));
+                Clipboard.setData(ClipboardData(text: contact.phoneNumber));
                 ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                   content: Text(
                     "Phone number copied to clipboard",
@@ -75,8 +77,20 @@ class ListViewBuilder extends StatelessWidget {
                 elevation: 6,
                 child: ListTile(
                   leading: const Icon(Icons.face),
-                  title: ContactInfo(index, context, true),
-                  trailing: ContactInfo(index, context, false),
+                  title: Text(
+                    contact.name,
+                    style: const TextStyle(
+                        fontFamily: "Poppins-Light",
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18),
+                  ),
+                  trailing: Text(
+                    contact.phoneNumber,
+                    style: const TextStyle(
+                        fontFamily: "Poppins-Light",
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18),
+                  ),
                 ),
               ),
             ),
@@ -86,12 +100,4 @@ class ListViewBuilder extends StatelessWidget {
       itemCount: contacts.length,
     );
   }
-
-  Text ContactInfo(int index, BuildContext context, bool isName) => Text(
-        isName ? contacts.value[index].name : contacts.value[index].phoneNumber,
-        style: TextStyle(
-            fontFamily: "Poppins-Light",
-            fontWeight: FontWeight.bold,
-            fontSize: MediaQuery.sizeOf(context).height / 50),
-      );
 }
