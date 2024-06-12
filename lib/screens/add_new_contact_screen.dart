@@ -1,5 +1,5 @@
-import 'package:contacts_app/models/contact_book.dart';
-import 'package:contacts_app/models/contacts.dart';
+import 'package:only_contacts/models/contact_book.dart';
+import 'package:only_contacts/models/contacts.dart';
 import 'package:flutter/material.dart';
 
 class AddNewContact extends StatefulWidget {

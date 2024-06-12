@@ -1,5 +1,5 @@
-name: contacts_app
-description: "A new Flutter project."
+name: only_contacts
+description: "Introducing our enhanced contact management solution. You might be asking yourself, 'Why do we need this when we already have a contact manager?' The answer is simple: our solution offers unparalleled efficiency and a seamless user experience. It is designed to be more intuitive, smoother, and more reliable than any other contact management system you have used before. With advanced features and a user-friendly interface, it simplifies the way you manage your contacts, ensuring you have quick and easy access to the information you need."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -30,14 +30,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
-
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.6
   uuid: ^4.4.0
   sqflite: ^2.3.3+1
-
+  path: any
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -46,7 +42,7 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^3.0.0
+  flutter_lints: ^4.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

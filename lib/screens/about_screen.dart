@@ -74,7 +74,7 @@ class About extends StatelessWidget {
                                   fontSize:
                                       MediaQuery.sizeOf(context).height / 50),
                             ),
-                            duration: Duration(seconds: 2),
+                            duration: const Duration(seconds: 2),
                             backgroundColor:
                                 const Color.fromARGB(255, 243, 238, 238),
                             // animation: AnimationController(vsync: ) ,

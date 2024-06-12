@@ -1,6 +1,6 @@
-import 'package:contacts_app/screens/about_screen.dart';
-import 'package:contacts_app/screens/add_new_contact_screen.dart';
-import 'package:contacts_app/screens/main_screen.dart';
+import 'package:only_contacts/screens/about_screen.dart';
+import 'package:only_contacts/screens/add_new_contact_screen.dart';
+import 'package:only_contacts/screens/main_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -40,7 +40,7 @@ class Home extends StatelessWidget {
             Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => About(),
+                  builder: (context) => const About(),
                 ));
           },
           icon: const Icon(Icons.info),

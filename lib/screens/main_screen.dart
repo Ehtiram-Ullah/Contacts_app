@@ -1,4 +1,4 @@
-import 'package:contacts_app/models/contact_book.dart';
+import 'package:only_contacts/models/contact_book.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -45,7 +45,7 @@ class ListViewBuilder extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                       fontSize: MediaQuery.sizeOf(context).height / 50),
                 ),
-                duration: Duration(seconds: 2),
+                duration: const Duration(seconds: 2),
                 backgroundColor: const Color.fromARGB(255, 243, 238, 238),
                 // animation: AnimationController(vsync: ) ,
                 // elevation: 15,
@@ -64,7 +64,7 @@ class ListViewBuilder extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                         fontSize: MediaQuery.sizeOf(context).height / 50),
                   ),
-                  duration: Duration(seconds: 2),
+                  duration: const Duration(seconds: 2),
                   backgroundColor: const Color.fromARGB(255, 243, 238, 238),
                   // animation: AnimationController(vsync: ) ,
                   // elevation: 15,
@@ -74,7 +74,7 @@ class ListViewBuilder extends StatelessWidget {
                 color: const Color.fromARGB(255, 243, 238, 238),
                 elevation: 6,
                 child: ListTile(
-                  leading: Icon(Icons.face),
+                  leading: const Icon(Icons.face),
                   title: ContactInfo(index, context, true),
                   trailing: ContactInfo(index, context, false),
                 ),

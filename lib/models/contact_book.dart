@@ -1,5 +1,5 @@
-import 'package:contacts_app/Database/data_base.dart';
-import 'package:contacts_app/models/contacts.dart';
+import 'package:only_contacts/Database/data_base.dart';
+import 'package:only_contacts/models/contacts.dart';
 import 'package:flutter/material.dart';
 
 class ContactBook extends ValueNotifier<List<Contact>> {

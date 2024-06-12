@@ -1,6 +1,6 @@
 {
-    "name": "contacts_app",
-    "short_name": "contacts_app",
+    "name": "only_contacts",
+    "short_name": "only_contacts",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
