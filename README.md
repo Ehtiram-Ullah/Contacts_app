@@ -3,11 +3,6 @@
 ## Overview
 **Only Contacts** is a simple yet efficient Flutter application designed for managing contacts. It allows users to store and retrieve contact information locally with ease. The app is built using modern Flutter practices, ensuring smooth performance and a great user experience.
 
-<p align="center">
-  <img src="/images/image1.jpeg" alt="App Screenshot 1" width="250"/>
-  <img src="/images/image2.jpeg" alt="App Screenshot 2" width="250"/>
-</p>
-
 ## Features
 - **Contact Management:** Add, update, and delete contacts easily.
 - **Local Data Storage:** Contacts are stored locally on the device for quick access.
