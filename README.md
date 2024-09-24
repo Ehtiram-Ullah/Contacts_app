@@ -23,3 +23,8 @@
   <img src="/images/image2.jpeg" alt="Screenshot 2" width="200"/>
 </p>
 
+## Contributing
+
+WELCOME! We welcome all contributions to **Only Contacts**! Whether you're fixing bugs, adding new features, or improving documentation, your help is appreciated.
+
+Feel free to submit a pull request or open an issue to get started.
