@@ -23,5 +23,3 @@
   <img src="/images/image2.jpeg" alt="Screenshot 2" width="200"/>
 </p>
 
-## Getting Started
-To get started with the **Only Contacts** app, follow these steps:
